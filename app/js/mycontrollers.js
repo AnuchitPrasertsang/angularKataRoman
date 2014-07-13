@@ -19,8 +19,6 @@ $scope.findRoman = function (arabic){
 	}
 }
 
-$scope.testFindRoman = $scope.findRoman($scope.arabicNumber);
-
 function splitNumberToStringArray(number){
 	var stringNumber = number.toString();
 	return stringNumber.split('');
