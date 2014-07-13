@@ -38,21 +38,30 @@ function findRomanDigit(Stringnumber,romanSign){
 			roman = romanSign[0]+romanSign[divFive+1];
 			break;
 		case 0:
-			if(divFive == 1){
-				roman = romanSign[1];
-			}
+			roman = findV(divFive,romanSign[1]);
 			break;
 		default:
-			if(divFive == 1){
-				roman = romanSign[1];
-				number = number % 5;
-			}
-			for (var i=0;i<number;i++){
-				roman += romanSign[0];
-			}			
+			roman = findV(divFive,romanSign[1]);
+			roman += getDigit(modFive,romanSign[0]);		
 			break;
 	}	
 	return roman;
+}
+
+function findV(divFive,V){
+	if(divFive == 1){
+		return V;
+	}else{
+		return "";
+	}
+}
+
+function getDigit(sum,digit){
+	var digits = "";
+	for (var i=0;i<sum;i++){
+		digits += digit;
+	}
+	return digits;
 }
 
 });
