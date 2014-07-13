@@ -29,26 +29,29 @@ function splitNumberToStringArray(number){
 function findRomanDigit(Stringnumber,romanSign){
 	var number = parseInt(Stringnumber);
 	var roman = "";
-	switch(number){
+
+	var modFive = number % 5;
+	var divFive = Math.floor(number / 5);
+
+	switch(modFive){
 		case 4:
-			roman = romanSign[0]+romanSign[1];
+			roman = romanSign[0]+romanSign[divFive+1];
 			break;
-		case 9:
-			roman = romanSign[0]+romanSign[2];
-			break;
-		case 5:
-			roman = romanSign[1];
+		case 0:
+			if(divFive == 1){
+				roman = romanSign[1];
+			}
 			break;
 		default:
-			if (number > 5){
+			if(divFive == 1){
 				roman = romanSign[1];
 				number = number % 5;
 			}
 			for (var i=0;i<number;i++){
 				roman += romanSign[0];
-			}
+			}			
 			break;
-	}
+	}	
 	return roman;
 }
 
