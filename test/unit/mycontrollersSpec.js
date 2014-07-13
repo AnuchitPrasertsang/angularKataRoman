@@ -113,5 +113,35 @@ describe('MyCtrl', function(){
   	$scope.findRoman($scope.arabicNumber);
   	expect($scope.romanNumber).toBe("XX");
   });
+  it('should be XL when input is 40', function() {
+    $scope.arabicNumber = 40;
+    $scope.findRoman($scope.arabicNumber);
+    expect($scope.romanNumber).toBe("XL");
+  });
+  it('should be XLIV when input is 44', function() {
+    $scope.arabicNumber = 44;
+    $scope.findRoman($scope.arabicNumber);
+    expect($scope.romanNumber).toBe("XLIV");
+  });
+  it('should be XLIX when input is 49', function() {
+    $scope.arabicNumber = 49;
+    $scope.findRoman($scope.arabicNumber);
+    expect($scope.romanNumber).toBe("XLIX");
+  });
+  it('should be L when input is 50', function() {
+    $scope.arabicNumber = 50;
+    $scope.findRoman($scope.arabicNumber);
+    expect($scope.romanNumber).toBe("L");
+  });
+  it('should be XCIX when input is 99', function() {
+    $scope.arabicNumber = 99;
+    $scope.findRoman($scope.arabicNumber);
+    expect($scope.romanNumber).toBe("XCIX");
+  });
+  it('should be C when input is 100', function() {
+    $scope.arabicNumber = 100;
+    $scope.findRoman($scope.arabicNumber);
+    expect($scope.romanNumber).toBe("C");
+  });
 
 });
